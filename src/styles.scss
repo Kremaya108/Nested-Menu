@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #F6F9FB !important;
+  .custom-tooltip {
+    left: -50px !important;
+  }
+  .btn-primary:disabled, .btn-primary.disabled {
+    background-color: #878a8e;
+    border-color: #a5aab1;
+  }
+}

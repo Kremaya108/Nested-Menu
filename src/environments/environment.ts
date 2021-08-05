@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyBrCx3D8-Qnep1yVBC5kg3cudcnqaANk5s',
+    authDomain: 'nested-menu.firebaseapp.com',
+    projectId: 'nested-menu',
+    storageBucket: 'nested-menu.appspot.com',
+    messagingSenderId: '117282519780',
+    appId: '1:117282519780:web:63290e4225baf8483b4af1'
+  }
 };
 
 /*

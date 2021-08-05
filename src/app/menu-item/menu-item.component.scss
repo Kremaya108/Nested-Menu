@@ -1,0 +1,86 @@
+.menu-item {
+  width: fit-content;
+  fa-icon {
+    cursor: pointer;
+    color: #93A4AA;
+    opacity: 0;
+  }
+  .item {
+    .item-wrapper {
+      display: flex;
+      font-size: 16px;
+      align-items: center;
+      &:hover {
+        fa-icon {
+          opacity: 1;
+        }
+      }
+      .click-item {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        padding-left: 10px;
+        .arrow {
+          opacity: 1;
+          font-size: 15px;
+          &.open {
+            transform: rotate(90deg);
+            padding: 0;
+          }
+        }
+        .item-name {
+          padding: 20px;
+          &.pointer {
+            cursor: pointer;
+          }
+          &:hover {
+            font-size: 16.5px;
+          }
+        }
+      }
+      .actions {
+        display: flex;
+        column-gap: 8px;
+        justify-content: space-between;
+        padding-right: 8px;
+        >:hover {
+          color: #0b5ed7;
+        }
+      }
+    }
+    .sub-menu {
+      position: relative;
+      left: 30px;
+      display: flex;
+    }
+    .edit-name {
+      display: flex;
+      .arrow {
+        padding: 10px;
+        opacity: 1;
+        font-size: 15px;
+        &.open {
+          transform: rotate(90deg);
+        }
+      }
+      .edit-name-wrapper {
+        .error {
+          color: red;
+          font-size: 12px;
+        }
+        .rename-input {
+          height: 35px;
+          padding: 7px 10px;
+          width: 100%;
+          border: 1px solid #B8C5CC;
+          box-sizing: border-box;
+          outline: none;
+          font-family: inherit !important;
+          &.invalid-input {
+            border-color: red;
+          }
+        }
+      }
+    }
+  }
+}

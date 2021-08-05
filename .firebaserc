@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "nested-menu": {
+      "hosting": {
+        "nested-menu": [
+          "nested-menu"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<div class="menu-item">
+  <div class="item" *ngFor="let item of subMenus">
+    <div *ngIf="renameItem !== item && item.name.trim().length" class="item-wrapper">
+      <div class="click-item" (click)="itemClicked(item)">
+        <fa-icon class="arrow" *ngIf="item.submenus && item.submenus.length" [icon]="rightIcon" [ngClass]="{'open': openItems.includes(item)}"></fa-icon>
+        <div class="item-name" [ngClass]="{'pointer': item.submenus && item.submenus.length}">{{item.name}}</div>
+      </div>
+      <div class="actions">
+        <fa-icon [icon]="addIcon" (click)="addSubmenu(item)"></fa-icon>
+        <fa-icon [icon]="renameIcon" (click)="renameSubmenu(item)"></fa-icon>
+        <fa-icon [icon]="deleteIcon" (click)="deleteSubmenu(item)"></fa-icon>
+      </div>
+    </div>
+    <div class="edit-name" *ngIf="renameItem === item || !item.name.trim().length">
+        <fa-icon class="arrow" *ngIf="item.submenus && item.submenus.length" [icon]="rightIcon" (click)="itemClicked(item)" [ngClass]="{'open': openItems.includes(item)}"></fa-icon>
+      <div class="edit-name-wrapper">
+        <input type="text" class="rename-input" [(ngModel)]="item.name" (blur)="renameSubmenu(null)" [ngClass]="{'invalid-input': !item.name.trim().length}"/>
+        <div class="error" *ngIf="!item.name.trim().length">You must enter a value</div>
+      </div>
+    </div>
+    <app-menu-item class="sub-menu" *ngIf="openItems.includes(item) && item.submenus" [subMenus]="item.submenus"></app-menu-item>
+  </div>
+</div>
